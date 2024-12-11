@@ -1,0 +1,70 @@
+[
+  {
+    "ContainingType": "DemoCabernetNet6.ontrollers.FileController",
+    "Method": "GetAll",
+    "RelativePath": "api/File",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DemoCabernetNet6.ontrollers.FileController",
+    "Method": "PostFile",
+    "RelativePath": "api/File",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DemoCabernetNet6.ontrollers.FileController",
+    "Method": "GetFile",
+    "RelativePath": "api/File/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DemoCabernetNet6.ontrollers.FileController",
+    "Method": "GetThumbnailFile",
+    "RelativePath": "api/File/GetThumbnailFile/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DemoCabernetNet6.Controllers.LanguageController",
+    "Method": "GetTrip",
+    "RelativePath": "api/Trip/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

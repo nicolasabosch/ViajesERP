@@ -1,0 +1,14 @@
+C:\Proyectos\ViajesERP\ViajesERPModel\bin\Debug\net6.0\ViajesERPModel.deps.json
+C:\Proyectos\ViajesERP\ViajesERPModel\bin\Debug\net6.0\ViajesERPModel.runtimeconfig.json
+C:\Proyectos\ViajesERP\ViajesERPModel\bin\Debug\net6.0\ViajesERPModel.dll
+C:\Proyectos\ViajesERP\ViajesERPModel\bin\Debug\net6.0\ViajesERPModel.pdb
+C:\Proyectos\ViajesERP\ViajesERPModel\obj\Debug\net6.0\ViajesERPModel.csproj.AssemblyReference.cache
+C:\Proyectos\ViajesERP\ViajesERPModel\obj\Debug\net6.0\ViajesERPModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Proyectos\ViajesERP\ViajesERPModel\obj\Debug\net6.0\ViajesERPModel.AssemblyInfoInputs.cache
+C:\Proyectos\ViajesERP\ViajesERPModel\obj\Debug\net6.0\ViajesERPModel.AssemblyInfo.cs
+C:\Proyectos\ViajesERP\ViajesERPModel\obj\Debug\net6.0\ViajesERPModel.csproj.CoreCompileInputs.cache
+C:\Proyectos\ViajesERP\ViajesERPModel\obj\Debug\net6.0\ViajesERPModel.dll
+C:\Proyectos\ViajesERP\ViajesERPModel\obj\Debug\net6.0\refint\ViajesERPModel.dll
+C:\Proyectos\ViajesERP\ViajesERPModel\obj\Debug\net6.0\ViajesERPModel.pdb
+C:\Proyectos\ViajesERP\ViajesERPModel\obj\Debug\net6.0\ViajesERPModel.genruntimeconfig.cache
+C:\Proyectos\ViajesERP\ViajesERPModel\obj\Debug\net6.0\ref\ViajesERPModel.dll
