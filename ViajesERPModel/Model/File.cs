@@ -49,5 +49,5 @@ public partial class File
     public virtual ICollection<ReceiptFile> ReceiptFile { get; } = new List<ReceiptFile>();
 
     [InverseProperty("File")]
-    public virtual ICollection<TripFile> TripFile { get; } = new List<TripFile>();
+    public virtual ICollection<TripEvent> TripEvent { get; } = new List<TripEvent>();
 }

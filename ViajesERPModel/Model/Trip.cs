@@ -98,7 +98,7 @@ public partial class Trip
     public virtual ICollection<SaleRetail> SaleRetail { get; } = new List<SaleRetail>();
 
     [InverseProperty("Trip")]
-    public virtual ICollection<TripFile> TripFile { get; } = new List<TripFile>();
+    public virtual ICollection<TripEvent> TripEvent { get; } = new List<TripEvent>();
 
     [InverseProperty("Trip")]
     public virtual ICollection<TripSaleDelivery> TripSaleDelivery { get; } = new List<TripSaleDelivery>();

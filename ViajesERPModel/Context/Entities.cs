@@ -116,6 +116,8 @@ public partial class Entities : DbContext
 
     public virtual DbSet<EndorsableCustomer> EndorsableCustomer { get; set; }
 
+    public virtual DbSet<Event> Event { get; set; }
+
     public virtual DbSet<ExpenseSubType> ExpenseSubType { get; set; }
 
     public virtual DbSet<ExpenseType> ExpenseType { get; set; }
@@ -368,7 +370,7 @@ public partial class Entities : DbContext
 
     public virtual DbSet<Trip> Trip { get; set; }
 
-    public virtual DbSet<TripFile> TripFile { get; set; }
+    public virtual DbSet<TripEvent> TripEvent { get; set; }
 
     public virtual DbSet<TripSaleDelivery> TripSaleDelivery { get; set; }
 
@@ -1466,6 +1468,11 @@ public partial class Entities : DbContext
             entity.Property(e => e.Address).HasComment("Domicilio");
             entity.Property(e => e.EndorsableCustomerName).HasComment("Nombre");
             entity.Property(e => e.TaxCode).HasComment("CUIT");
+        });
+
+        modelBuilder.Entity<Event>(entity =>
+        {
+            entity.Property(e => e.EventID).ValueGeneratedNever();
         });
 
         modelBuilder.Entity<ExpenseSubType>(entity =>
@@ -3166,17 +3173,23 @@ public partial class Entities : DbContext
                 .HasConstraintName("FK_Trip_WarehouseGroup");
         });
 
-        modelBuilder.Entity<TripFile>(entity =>
+        modelBuilder.Entity<TripEvent>(entity =>
         {
-            entity.HasOne(d => d.File).WithMany(p => p.TripFile)
+            entity.HasKey(e => e.TripEventID).HasName("PK_TripFile");
+
+            entity.HasOne(d => d.Event).WithMany(p => p.TripEvent)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_TripEvent_Event");
+
+            entity.HasOne(d => d.File).WithMany(p => p.TripEvent)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_TripFile_File");
 
-            entity.HasOne(d => d.SaleDelivery).WithMany(p => p.TripFile)
+            entity.HasOne(d => d.SaleDelivery).WithMany(p => p.TripEvent)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_TripFile_SaleDelivery");
 
-            entity.HasOne(d => d.Trip).WithMany(p => p.TripFile)
+            entity.HasOne(d => d.Trip).WithMany(p => p.TripEvent)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_TripFile_Trip");
         });

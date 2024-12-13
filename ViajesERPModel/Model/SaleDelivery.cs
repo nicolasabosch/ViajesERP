@@ -276,7 +276,7 @@ public partial class SaleDelivery
     public virtual Trip? Trip { get; set; }
 
     [InverseProperty("SaleDelivery")]
-    public virtual ICollection<TripFile> TripFile { get; } = new List<TripFile>();
+    public virtual ICollection<TripEvent> TripEvent { get; } = new List<TripEvent>();
 
     [InverseProperty("SaleDelivery")]
     public virtual ICollection<TripSaleDelivery> TripSaleDelivery { get; } = new List<TripSaleDelivery>();
