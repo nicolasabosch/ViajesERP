@@ -56,7 +56,16 @@ namespace DemoCabernetNet6.ontrollers
             var file = db.File.Find(id);
             string path = Directory.GetCurrentDirectory() + "\\files\\" + file.FolderName + "\\" + file.FileID + "-" + file.FileName;
             var fs = new FileStream(path, FileMode.Open);
-            return File(fs, "application/octet-stream", file.FileName);
+            var previewList = new[] { ".jpg", ".png", ".gif", ".bmp" };
+            if (previewList.Contains(file.FileName.ToLower().Substring(file.FileName.ToLower().IndexOf("."))))
+            {
+
+                return File(fs, "image/jpeg");
+            }
+            else
+            {
+                return File(fs, "application/octet-stream", file.FileName);
+            }
 
         }
 

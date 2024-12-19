@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using ViajesERPModel.Model;
+using TaskStatus = ViajesERPModel.Model.TaskStatus;
 
 namespace DemoCabernetNet6;
 
@@ -1468,11 +1469,6 @@ public partial class Entities : DbContext
             entity.Property(e => e.Address).HasComment("Domicilio");
             entity.Property(e => e.EndorsableCustomerName).HasComment("Nombre");
             entity.Property(e => e.TaxCode).HasComment("CUIT");
-        });
-
-        modelBuilder.Entity<Event>(entity =>
-        {
-            entity.Property(e => e.EventID).ValueGeneratedNever();
         });
 
         modelBuilder.Entity<ExpenseSubType>(entity =>
@@ -3019,7 +3015,7 @@ public partial class Entities : DbContext
             entity.Property(e => e.TaskLogStatusName).HasComment("Nombre");
         });
 
-        modelBuilder.Entity<ViajesERPModel.Model.TaskStatus>(entity =>
+        modelBuilder.Entity<TaskStatus>(entity =>
         {
             entity.Property(e => e.TaskStatusID).HasComment("Código");
             entity.Property(e => e.TaskStatusName).HasComment("Nombre");
@@ -3181,13 +3177,9 @@ public partial class Entities : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_TripEvent_Event");
 
-            entity.HasOne(d => d.File).WithMany(p => p.TripEvent)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_TripFile_File");
+            entity.HasOne(d => d.File).WithMany(p => p.TripEvent).HasConstraintName("FK_TripFile_File");
 
-            entity.HasOne(d => d.SaleDelivery).WithMany(p => p.TripEvent)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_TripFile_SaleDelivery");
+            entity.HasOne(d => d.SaleDelivery).WithMany(p => p.TripEvent).HasConstraintName("FK_TripFile_SaleDelivery");
 
             entity.HasOne(d => d.Trip).WithMany(p => p.TripEvent)
                 .OnDelete(DeleteBehavior.ClientSetNull)

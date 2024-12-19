@@ -66,5 +66,47 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DemoCabernetNet6.Controllers.TripEventController",
+    "Method": "PostCustomer",
+    "RelativePath": "api/TripEvent",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tripEvent",
+        "Type": "ViajesERPModel.Model.TripEvent",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DemoCabernetNet6.Controllers.TripEventController",
+    "Method": "GetTripEvent",
+    "RelativePath": "api/TripEvent/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ViajesERPModel.Model.TripEvent",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

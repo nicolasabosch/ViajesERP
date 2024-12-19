@@ -32,6 +32,8 @@ namespace DemoCabernetNet6.Controllers
         [HttpGet("{id}")]
         public ActionResult GetTrip(int id)
         {
+            var previewList = new[] { ".jpeg", ".jpg", ".png", ".gif", ".bmp" };
+
             var trip = (from Trip in db.Trip
                         join TripStatus in db.TripStatus on Trip.TripStatusID equals TripStatus.TripStatusID
                         join TripType in db.TripType on Trip.TripTypeID equals TripType.TripTypeID
@@ -77,6 +79,29 @@ namespace DemoCabernetNet6.Controllers
             }
 
             dynamic record = trip.ToExpando();
+
+
+            record.TripEvent = (from TripEvent in db.TripEvent
+                                from File in db.File.Where(x => x.FileID == TripEvent.FileID).DefaultIfEmpty()
+                                join Event in db.Event on TripEvent.EventID equals Event.EventID
+                                where TripEvent.TripID == id select new
+                                {
+                                    TripEvent.TripEventID,
+                                    TripEvent.TripID,
+                                    TripEvent.CreatedOn,
+                                    TripEvent.Latitude,
+                                    TripEvent.Longitude,
+                                    TripEvent.FileID,
+                                    TripEvent.SourceID,
+                                    TripEvent.SaleDeliveryID,
+                                    TripEvent.EventID,
+                                    Event.EventName,
+                                    Preview = File == null ? false : previewList.Contains(File.FileName.ToLower().Substring(File.FileName.ToLower().IndexOf("."))),
+
+                                }
+
+
+                                ).ToList();
             record.TripSaleDelivery = (from TripSaleDelivery in db.TripSaleDelivery
                                        join vSaleDelivery in db.vSaleDelivery on TripSaleDelivery.SaleDeliveryID equals vSaleDelivery.SaleDeliveryID
                                        where TripSaleDelivery.TripID == id

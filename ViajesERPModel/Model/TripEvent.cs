@@ -15,40 +15,42 @@ public partial class TripEvent
 
     [StringLength(36)]
     [Unicode(false)]
-    public string FileID { get; set; } = null!;
+    public string? FileID { get; set; }
 
     [StringLength(36)]
     [Unicode(false)]
-    public string SaleDeliveryID { get; set; } = null!;
+    public string? SaleDeliveryID { get; set; }
 
     [StringLength(36)]
     [Unicode(false)]
-    public string Latitude { get; set; } = null!;
+    public string? Latitude { get; set; }
 
     [StringLength(36)]
     [Unicode(false)]
-    public string Longitude { get; set; } = null!;
-
-    public int EventID { get; set; }
+    public string? Longitude { get; set; }
 
     [StringLength(36)]
     [Unicode(false)]
-    public string SourceID { get; set; } = null!;
+    public string EventID { get; set; } = null!;
+
+    [StringLength(36)]
+    [Unicode(false)]
+    public string? SourceID { get; set; }
 
     [Unicode(false)]
-    public string Remarks { get; set; } = null!;
+    public string? Remarks { get; set; }
 
-    public DateTimeOffset CreatedOn { get; set; }
+    public DateTimeOffset? CreatedOn { get; set; }
 
     [StringLength(200)]
     [Unicode(false)]
-    public string CreatedBy { get; set; } = null!;
+    public string? CreatedBy { get; set; }
 
-    public DateTimeOffset LastModifiedOn { get; set; }
+    public DateTimeOffset? LastModifiedOn { get; set; }
 
     [StringLength(200)]
     [Unicode(false)]
-    public string LastModifiedBy { get; set; } = null!;
+    public string? LastModifiedBy { get; set; }
 
     [ForeignKey("EventID")]
     [InverseProperty("TripEvent")]
@@ -56,11 +58,11 @@ public partial class TripEvent
 
     [ForeignKey("FileID")]
     [InverseProperty("TripEvent")]
-    public virtual File File { get; set; } = null!;
+    public virtual File? File { get; set; }
 
     [ForeignKey("SaleDeliveryID")]
     [InverseProperty("TripEvent")]
-    public virtual SaleDelivery SaleDelivery { get; set; } = null!;
+    public virtual SaleDelivery? SaleDelivery { get; set; }
 
     [ForeignKey("TripID")]
     [InverseProperty("TripEvent")]
