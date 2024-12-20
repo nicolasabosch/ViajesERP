@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A78676F5-DBA3-44DC-8D62-C918A7000D51}|ViajesERPAPI.csproj|c:\\proyectos\\viajeserp\\viajeserpapi\\controllers\\security\\tripeventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A78676F5-DBA3-44DC-8D62-C918A7000D51}|ViajesERPAPI.csproj|solutionrelative:controllers\\security\\tripeventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A78676F5-DBA3-44DC-8D62-C918A7000D51}|ViajesERPAPI.csproj|c:\\proyectos\\viajeserp\\viajeserpapi\\controllers\\security\\filecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A78676F5-DBA3-44DC-8D62-C918A7000D51}|ViajesERPAPI.csproj|solutionrelative:controllers\\security\\filecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A78676F5-DBA3-44DC-8D62-C918A7000D51}|ViajesERPAPI.csproj|c:\\proyectos\\viajeserp\\viajeserpapi\\controllers\\security\\tripcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A78676F5-DBA3-44DC-8D62-C918A7000D51}|ViajesERPAPI.csproj|solutionrelative:controllers\\security\\tripcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A78676F5-DBA3-44DC-8D62-C918A7000D51}|ViajesERPAPI.csproj|c:\\proyectos\\viajeserp\\viajeserpapi\\controllers\\security\\tripeventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A78676F5-DBA3-44DC-8D62-C918A7000D51}|ViajesERPAPI.csproj|solutionrelative:controllers\\security\\tripeventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ECC5D6AD-2D0D-4989-BE0A-258886211E0D}|..\\ViajesERPModel\\ViajesERPModel.csproj|c:\\proyectos\\viajeserp\\viajeserpmodel\\context\\entities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -25,21 +25,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 12,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FileController.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\Controllers\\Security\\FileController.cs",
-              "RelativeDocumentMoniker": "Controllers\\Security\\FileController.cs",
-              "ToolTip": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\Controllers\\Security\\FileController.cs",
-              "RelativeToolTip": "Controllers\\Security\\FileController.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAkwD4AAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T22:59:05.768Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -79,6 +66,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "FileController.cs",
+              "DocumentMoniker": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\Controllers\\Security\\FileController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Security\\FileController.cs",
+              "ToolTip": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\Controllers\\Security\\FileController.cs",
+              "RelativeToolTip": "Controllers\\Security\\FileController.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAkwDoAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T22:59:05.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "TripController.cs",
               "DocumentMoniker": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\Controllers\\Security\\TripController.cs",
               "RelativeDocumentMoniker": "Controllers\\Security\\TripController.cs",
@@ -86,8 +86,7 @@
               "RelativeToolTip": "Controllers\\Security\\TripController.cs",
               "ViewState": "AgIAAE8AAAAAAAAAAAAIwGIAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T19:28:31.045Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T19:28:31.045Z"
             },
             {
               "$type": "Document",
@@ -103,13 +102,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "TripEventController.cs",
               "DocumentMoniker": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\Controllers\\Security\\TripEventController.cs",
               "RelativeDocumentMoniker": "Controllers\\Security\\TripEventController.cs",
               "ToolTip": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\Controllers\\Security\\TripEventController.cs",
               "RelativeToolTip": "Controllers\\Security\\TripEventController.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAAABQAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAhwDIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-16T20:46:28.242Z",
               "EditorCaption": ""
