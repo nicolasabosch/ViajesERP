@@ -24,10 +24,6 @@ namespace DemoCabernetNet6.Controllers
             db = context;
         }
 
-        // GET api/Language
-
-
-        // GET api/Language/5
         [AllowAnonymous]
         [HttpGet("{id}")]
         public ActionResult GetTrip(int id)
@@ -156,7 +152,6 @@ namespace DemoCabernetNet6.Controllers
                                            TripSaleDelivery.LastModifiedOn,
                                            EntityStatus = "U"
 
-
                                        }).ToList();
 
             record.TripWithdrawalOrder = (from TripWithdrawalOrder in db.TripWithdrawalOrder
@@ -213,7 +208,6 @@ namespace DemoCabernetNet6.Controllers
                                               TripWithdrawalOrder.SaleDeliveryOnTripRemarks,
                                               TripWithdrawalOrder.LastModifiedOn,
                                               EntityStatus = "U"
-
 
                                           }).ToList();
             record.TripSaleRetail = (from TripSaleRetail in db.TripSaleRetail
@@ -276,75 +270,6 @@ namespace DemoCabernetNet6.Controllers
 
             return Ok(record);
         }
-
-        // PUT api/Language/5
-        //[HttpPut("{id}")]
-        //public ActionResult PutLanguage(string id, Language language)
-        //{
-        //    ModelState.Clear();
-        //    Extensions.ClearReferences(language);
-        //    TryValidateModel(language);
-        //    if (ModelState.IsValid && id == language.LanguageID)
-        //    {
-        //        db.Entry(language).State = EntityState.Modified;
-        //        Entities.ProcessChildrenUpdate(db, language.DataTranslation.ToList());
-        //        try
-        //        {
-        //            db.SaveChanges();
-        //        }
-        //        catch (DbUpdateConcurrencyException)
-        //        {
-        //            return NotFound();
-        //        }
-
-        //        return NoContent();
-        //    }
-        //    else
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-        //}
-
-        // POST api/Language
-        //[HttpPost]
-        //public ActionResult<Language> PostLanguage(Language language)
-        //{
-        //    ModelState.Clear();
-        //    Extensions.ClearReferences(language);
-        //    TryValidateModel(language);
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Language.Add(language);
-        //        Entities.ProcessChildrenUpdate(db, language.DataTranslation.ToList());
-        //        try
-        //        {
-        //            db.SaveChanges();
-        //        }
-        //        catch (DbUpdateException)
-        //        {
-        //            if (LanguageExists(language.LanguageID))
-        //            {
-        //                return Conflict();
-        //            }
-        //            else
-        //            {
-        //                throw;
-        //            }
-        //        }
-
-        //        return CreatedAtAction("GetLanguage", new
-        //        {
-        //            id = language.LanguageID
-        //        }
-
-        //        , language);
-        //    }
-        //    else
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-        //}
-
-       
+           
     }
 }

@@ -80,14 +80,7 @@ builder.Services.AddAuthentication(options =>
 
     };
 });
-/*
-builder.Services.AddAuthorization(options =>
-{
-    options.FallbackPolicy = new AuthorizationPolicyBuilder()
-        .RequireAuthenticatedUser()
-        .Build();
-});
-*/
+
 var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
 builder.Services.AddControllers().AddMvcOptions(options => options.Filters.Add(new AuthorizeFilter(policy)));
 
@@ -104,14 +97,6 @@ if (app.Environment.IsDevelopment())
 app.UseAuthentication();
 app.UseCors("corsapp");
 app.UseHttpsRedirection();
-
-/*
-// Defaults to index.html
-var defaultFilesOptions = new DefaultFilesOptions();
-defaultFilesOptions.DefaultFileNames.Clear();
-defaultFilesOptions.DefaultFileNames.Add("index.html");
-app.UseDefaultFiles(defaultFilesOptions);
-*/
 
 app.UseStaticFiles(new StaticFileOptions
 {
@@ -131,8 +116,6 @@ app.MapControllers();
 
 app.Use(async (context, next) =>
 {
-    // Do work that doesn't write to the Response.
-
     try
     {
 
@@ -155,5 +138,4 @@ app.Use(async (context, next) =>
     }
     await next.Invoke();
 });
-
 app.Run();

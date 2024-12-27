@@ -39,14 +39,9 @@ namespace DemoCabernetNet6.ontrollers
                 list = list.Where(l => l.FileID == key);
             }
 
-
-
             var ret = list.AsEnumerable();
-
             return Ok(ret);
         }
-
-        // GET api/Country/5
 
         [HttpGet("{id}")]
         [AllowAnonymous]
@@ -59,7 +54,6 @@ namespace DemoCabernetNet6.ontrollers
             var previewList = new[] { ".jpg", ".png", ".gif", ".bmp" };
             if (previewList.Contains(file.FileName.ToLower().Substring(file.FileName.ToLower().IndexOf("."))))
             {
-
                 return File(fs, "image/jpeg");
             }
             else
@@ -69,7 +63,6 @@ namespace DemoCabernetNet6.ontrollers
 
         }
 
-        // POST api/File
         [AllowAnonymous]
         [HttpPost]
         public ActionResult PostFile()
@@ -88,21 +81,16 @@ namespace DemoCabernetNet6.ontrollers
                 {
                     postedFile.CopyTo(stream);
                 }
-                
                 file.FileName = postedFile.FileName;
                 file.FileSize = int.Parse(postedFile.Length.ToString());
                 db.File.Add(file);
                 db.SaveChanges();
-
                 var previewList = new[] { ".jpg", ".png", ".gif", ".bmp" };
-
                 dynamic objFile = new {FileID = file.FileID, 
                 FileName = file.FileName,
                 Preview = previewList.Contains(file.FileName.ToLower().Substring(file.FileName.ToLower().IndexOf(".")))
                 };
                 
-
-                //return CreatedAtAction("File", new { id = file.FileID }, objFile);
                 return Ok(objFile);
 
             }
@@ -113,8 +101,6 @@ namespace DemoCabernetNet6.ontrollers
 
         }
 
-
-
         [HttpGet("GetThumbnailFile/{id}")]
         [AllowAnonymous]
         public ActionResult GetThumbnailFile(string id)
@@ -124,14 +110,12 @@ namespace DemoCabernetNet6.ontrollers
             {
                 return NotFound();
             }
-
+            
             string path = Directory.GetCurrentDirectory() + "\\files\\" + file.FolderName + "\\" + file.FileID + "-" + file.FileName;
-
 
             using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read))
             {
                 const int MaxDim = 120;
-
                 using (Image originalImage = Image.FromStream(stream))
                 {
 
