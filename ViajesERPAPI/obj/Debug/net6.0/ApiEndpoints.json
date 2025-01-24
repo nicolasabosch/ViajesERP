@@ -62,6 +62,26 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "DemoCabernetNet6.Controllers.SaleDeliveryController",
+    "Method": "GetSaleDeliveryOnTripStatus",
+    "RelativePath": "api/SaleDeliveryOnTripStatus",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DemoCabernetNet6.Controllers.SaleDeliveryController",
+    "Method": "GetSaleDeliveryRejectReason",
+    "RelativePath": "api/SaleDeliveryRejectReason",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "DemoCabernetNet6.Controllers.LanguageController",
     "Method": "GetTrip",
     "RelativePath": "api/Trip/{id}",
