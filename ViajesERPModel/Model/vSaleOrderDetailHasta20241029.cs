@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace ViajesERPModel.Model;
 
 [Keyless]
-public partial class vSaleOrderDetail
+public partial class vSaleOrderDetailHasta20241029
 {
     public int SaleOrderNumber { get; set; }
 
@@ -53,9 +53,6 @@ public partial class vSaleOrderDetail
     [StringLength(200)]
     [Unicode(false)]
     public string? SaleChannelName { get; set; }
-
-    [StringLength(200)]
-    public string PaymentConditionName { get; set; } = null!;
 
     [Column(TypeName = "decimal(20, 4)")]
     public decimal? PriceInUSDAVG { get; set; }

@@ -11,7 +11,7 @@ public partial class TripEvent
     [Key]
     public int TripEventID { get; set; }
 
-    public int TripID { get; set; }
+    public int? TripID { get; set; }
 
     [StringLength(36)]
     [Unicode(false)]
@@ -66,5 +66,5 @@ public partial class TripEvent
 
     [ForeignKey("TripID")]
     [InverseProperty("TripEvent")]
-    public virtual Trip Trip { get; set; } = null!;
+    public virtual Trip? Trip { get; set; }
 }

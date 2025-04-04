@@ -63,6 +63,7 @@ namespace DemoCabernetNet6.Controllers
 
 
 
+
                         }).FirstOrDefault();
 
 
@@ -70,7 +71,7 @@ namespace DemoCabernetNet6.Controllers
 
             if (trip == null)
             {
-               return NotFound();
+                return NotFound();
 
             }
 
@@ -80,7 +81,8 @@ namespace DemoCabernetNet6.Controllers
             record.TripEvent = (from TripEvent in db.TripEvent
                                 from File in db.File.Where(x => x.FileID == TripEvent.FileID).DefaultIfEmpty()
                                 join Event in db.Event on TripEvent.EventID equals Event.EventID
-                                where TripEvent.TripID == id select new
+                                where TripEvent.TripID == id
+                                select new
                                 {
                                     TripEvent.TripEventID,
                                     TripEvent.TripID,
@@ -270,6 +272,64 @@ namespace DemoCabernetNet6.Controllers
 
             return Ok(record);
         }
-           
+
+
+        [AllowAnonymous]
+        [HttpPut]
+        public ActionResult UpdateTrip([FromBody] dynamic input)
+        {
+            var SaleDeliveryOnTripStatusID = input.SaleDeliveryOnTripStatusID.ToString();
+            var SaleDeliveryOnTripRemarks = input.SaleDeliveryOnTripRemarks.ToString();
+            var SaleDeliveryRejectReasonID = input.SaleDeliveryRejectReasonID.ToString();
+            var SourceID = input.SourceID.ToString();
+            int TripID = int.Parse(input.TripID.ToString());
+
+
+            switch (SourceID)
+            {
+                case "SaleDelivery":
+                    string SaleDeliveryID = input.SaleDeliveryID.ToString();
+                    var TripSaleDelivery = db.TripSaleDelivery.Where(x => x.TripID == TripID && x.SaleDeliveryID == SaleDeliveryID).FirstOrDefault();
+                    if (TripSaleDelivery != null)
+                    {
+                        TripSaleDelivery.SaleDeliveryOnTripStatusID = SaleDeliveryOnTripStatusID;
+                        TripSaleDelivery.SaleDeliveryOnTripRemarks = SaleDeliveryOnTripRemarks;
+                        TripSaleDelivery.SaleDeliveryRejectReasonID = SaleDeliveryRejectReasonID;
+                        db.SaveChanges();
+                    }
+                    break;
+
+                case "WithdrawalOrder":
+                    string WithdrawalOrderID = input.WithdrawalOrderID.ToString();
+                    var TripWithdrawalOrder = db.TripWithdrawalOrder.Where(x => x.TripID == TripID && x.WithdrawalOrderID == WithdrawalOrderID).FirstOrDefault();
+                    if (TripWithdrawalOrder != null)
+                    {
+                        TripWithdrawalOrder.SaleDeliveryOnTripStatusID = SaleDeliveryOnTripStatusID;
+                        TripWithdrawalOrder.SaleDeliveryOnTripRemarks = SaleDeliveryOnTripRemarks;
+                        TripWithdrawalOrder.SaleDeliveryRejectReasonID = SaleDeliveryRejectReasonID;
+                        db.SaveChanges();
+                    }
+                    break;
+
+                case "SaleRetail":
+                    string SaleRetailID = input.SaleRetailID.ToString();
+                    var TripSaleRetail = db.TripSaleRetail.Where(x => x.TripID == TripID && x.SaleRetailID == SaleRetailID).FirstOrDefault();
+                    if (TripSaleRetail != null)
+                    {
+                        TripSaleRetail.SaleDeliveryOnTripStatusID = SaleDeliveryOnTripStatusID;
+                        TripSaleRetail.SaleDeliveryOnTripRemarks = SaleDeliveryOnTripRemarks;
+                        TripSaleRetail.SaleDeliveryRejectReasonID = SaleDeliveryRejectReasonID;
+                        db.SaveChanges();
+                    }
+                    break;
+
+                default:
+                    return BadRequest("Invalid source ID.");
+            }
+
+
+            return NoContent();
+        }
+
     }
 }

@@ -27,7 +27,7 @@ namespace DemoCabernetNet6.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [AllowAnonymous]
         [HttpPost]
-        public async Task<ActionResult<object>> PostCustomer(TripEvent tripEvent)
+        public async Task<ActionResult<object>> PostTripEvent(TripEvent tripEvent)
         {
             if (tripEvent == null)
             {

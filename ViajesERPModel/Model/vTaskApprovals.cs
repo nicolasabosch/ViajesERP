@@ -29,10 +29,10 @@ public partial class vTaskApprovals
 
     [StringLength(36)]
     [Unicode(false)]
-    public string UserID { get; set; } = null!;
+    public string? UserID { get; set; }
 
     [StringLength(201)]
-    public string UserFullName { get; set; } = null!;
+    public string? UserFullName { get; set; }
 
     [StringLength(36)]
     [Unicode(false)]
@@ -46,4 +46,8 @@ public partial class vTaskApprovals
 
     [StringLength(201)]
     public string SaleRepresentativeName { get; set; } = null!;
+
+    [StringLength(36)]
+    [Unicode(false)]
+    public string? SaleRepresentativeID { get; set; }
 }

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using ViajesERPModel.Model;
-using TaskStatus = ViajesERPModel.Model.TaskStatus;
 
 namespace DemoCabernetNet6;
 
@@ -58,6 +57,8 @@ public partial class Entities : DbContext
     public virtual DbSet<ConceptGroup> ConceptGroup { get; set; }
 
     public virtual DbSet<ContactSource> ContactSource { get; set; }
+
+    public virtual DbSet<CostCenter> CostCenter { get; set; }
 
     public virtual DbSet<CountOrder> CountOrder { get; set; }
 
@@ -373,6 +374,8 @@ public partial class Entities : DbContext
 
     public virtual DbSet<TripEvent> TripEvent { get; set; }
 
+    public virtual DbSet<TripFile> TripFile { get; set; }
+
     public virtual DbSet<TripSaleDelivery> TripSaleDelivery { get; set; }
 
     public virtual DbSet<TripSaleRetail> TripSaleRetail { get; set; }
@@ -446,6 +449,8 @@ public partial class Entities : DbContext
     public virtual DbSet<vCurrencyRate> vCurrencyRate { get; set; }
 
     public virtual DbSet<vCurrencyRateAvg> vCurrencyRateAvg { get; set; }
+
+    public virtual DbSet<vCurrencyRateHasta20241125> vCurrencyRateHasta20241125 { get; set; }
 
     public virtual DbSet<vDeliveryItemStatusReport> vDeliveryItemStatusReport { get; set; }
 
@@ -561,6 +566,8 @@ public partial class Entities : DbContext
 
     public virtual DbSet<vReportRemitoTotalFamiliaMes> vReportRemitoTotalFamiliaMes { get; set; }
 
+    public virtual DbSet<vReportRemitoTotalHasta20241125> vReportRemitoTotalHasta20241125 { get; set; }
+
     public virtual DbSet<vReportRemitoTotalSinProducto> vReportRemitoTotalSinProducto { get; set; }
 
     public virtual DbSet<vReporteClientesTarot> vReporteClientesTarot { get; set; }
@@ -568,6 +575,8 @@ public partial class Entities : DbContext
     public virtual DbSet<vSaleDelivery> vSaleDelivery { get; set; }
 
     public virtual DbSet<vSaleDeliveryItem> vSaleDeliveryItem { get; set; }
+
+    public virtual DbSet<vSaleDeliveryItemUSDValue> vSaleDeliveryItemUSDValue { get; set; }
 
     public virtual DbSet<vSaleDeliveryNote> vSaleDeliveryNote { get; set; }
 
@@ -582,6 +591,8 @@ public partial class Entities : DbContext
     public virtual DbSet<vSaleOrderDetail20240827> vSaleOrderDetail20240827 { get; set; }
 
     public virtual DbSet<vSaleOrderDetailHasta20240411> vSaleOrderDetailHasta20240411 { get; set; }
+
+    public virtual DbSet<vSaleOrderDetailHasta20241029> vSaleOrderDetailHasta20241029 { get; set; }
 
     public virtual DbSet<vSaleOrderItem_SaleDeliveryItem> vSaleOrderItem_SaleDeliveryItem { get; set; }
 
@@ -663,6 +674,8 @@ public partial class Entities : DbContext
 
     public virtual DbSet<zDelete> zDelete { get; set; }
 
+    public virtual DbSet<zInventory> zInventory { get; set; }
+
     public virtual DbSet<zRV> zRV { get; set; }
 
     public virtual DbSet<zViejavPurchaseOrderTotal> zViejavPurchaseOrderTotal { get; set; }
@@ -685,6 +698,8 @@ public partial class Entities : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.UseCollation("SQL_Latin1_General_CP1_CI_AS");
+
         modelBuilder.Entity<AccountPayable>(entity =>
         {
             entity.HasKey(e => e.AccountPayableID).HasName("PK_AccountPayable_1");
@@ -1015,6 +1030,12 @@ public partial class Entities : DbContext
             entity.Property(e => e.ContactSourceName).HasComment("Nombre");
         });
 
+        modelBuilder.Entity<CostCenter>(entity =>
+        {
+            entity.Property(e => e.CostCenterID).HasComment("Código");
+            entity.Property(e => e.CostCenterName).HasComment("Nombre");
+        });
+
         modelBuilder.Entity<CountOrder>(entity =>
         {
             entity.Property(e => e.AssginedName).HasComment("Asignado A");
@@ -1123,10 +1144,6 @@ public partial class Entities : DbContext
             entity.HasOne(d => d.Currency).WithMany(p => p.CreditNote)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_CreditNote_Currency");
-
-            entity.HasOne(d => d.Customer).WithMany(p => p.CreditNote)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_CreditNote_Customer");
 
             entity.HasOne(d => d.DocumentStatus).WithMany(p => p.CreditNote)
                 .OnDelete(DeleteBehavior.ClientSetNull)
@@ -2930,14 +2947,6 @@ public partial class Entities : DbContext
                 .HasConstraintName("FK_SaleRetailValue_ValueType");
         });
 
-        modelBuilder.Entity<Schedule>(entity =>
-        {
-            entity.Property(e => e.ScheduleID).HasComment("Código");
-            entity.Property(e => e.Active).HasComment("Activo");
-            entity.Property(e => e.ScheduleCode).HasComment("");
-            entity.Property(e => e.ScheduleName).HasComment("Nombre");
-        });
-
         modelBuilder.Entity<SqlScript>(entity =>
         {
             entity.Property(e => e.SqlScriptID).HasComment("ID");
@@ -3015,7 +3024,7 @@ public partial class Entities : DbContext
             entity.Property(e => e.TaskLogStatusName).HasComment("Nombre");
         });
 
-        modelBuilder.Entity<TaskStatus>(entity =>
+        modelBuilder.Entity<ViajesERPModel.Model.TaskStatus>(entity =>
         {
             entity.Property(e => e.TaskStatusID).HasComment("Código");
             entity.Property(e => e.TaskStatusName).HasComment("Nombre");
@@ -3171,17 +3180,26 @@ public partial class Entities : DbContext
 
         modelBuilder.Entity<TripEvent>(entity =>
         {
-            entity.HasKey(e => e.TripEventID).HasName("PK_TripFile");
-
             entity.HasOne(d => d.Event).WithMany(p => p.TripEvent)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_TripEvent_Event");
 
-            entity.HasOne(d => d.File).WithMany(p => p.TripEvent).HasConstraintName("FK_TripFile_File");
+            entity.HasOne(d => d.File).WithMany(p => p.TripEvent).HasConstraintName("FK_TripEvent_File");
 
-            entity.HasOne(d => d.SaleDelivery).WithMany(p => p.TripEvent).HasConstraintName("FK_TripFile_SaleDelivery");
+            entity.HasOne(d => d.SaleDelivery).WithMany(p => p.TripEvent).HasConstraintName("FK_TripEvent_SaleDelivery");
 
-            entity.HasOne(d => d.Trip).WithMany(p => p.TripEvent)
+            entity.HasOne(d => d.Trip).WithMany(p => p.TripEvent).HasConstraintName("FK_TripEvent_Trip");
+        });
+
+        modelBuilder.Entity<TripFile>(entity =>
+        {
+            entity.Property(e => e.TripFileID).ValueGeneratedNever();
+
+            entity.HasOne(d => d.File).WithMany(p => p.TripFile).HasConstraintName("FK_TripFile_File");
+
+            entity.HasOne(d => d.SaleDelivery).WithMany(p => p.TripFile).HasConstraintName("FK_TripFile_SaleDelivery");
+
+            entity.HasOne(d => d.Trip).WithMany(p => p.TripFile)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_TripFile_Trip");
         });
@@ -3319,6 +3337,7 @@ public partial class Entities : DbContext
             entity.Property(e => e.VendorPaymentID).HasComment("ID");
             entity.Property(e => e.BusinessUnitID).HasComment("Código");
             entity.Property(e => e.ChannelID).HasComment("Canal");
+            entity.Property(e => e.CostCenterID).HasComment("Código");
             entity.Property(e => e.CurrencyRateAmount).HasComment("Cotización Dolar");
             entity.Property(e => e.DocumentStatusID).HasComment("ID");
             entity.Property(e => e.ExpenseSubTypeID).HasComment("Sub Concepto");
@@ -3342,6 +3361,8 @@ public partial class Entities : DbContext
             entity.HasOne(d => d.Channel).WithMany(p => p.VendorPayment)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_VendorPayment_Channel");
+
+            entity.HasOne(d => d.CostCenter).WithMany(p => p.VendorPayment).HasConstraintName("FK_VendorPayment_CostCenter");
 
             entity.HasOne(d => d.DocumentStatus).WithMany(p => p.VendorPayment)
                 .OnDelete(DeleteBehavior.ClientSetNull)
@@ -3543,6 +3564,11 @@ public partial class Entities : DbContext
         modelBuilder.Entity<vCurrencyRateAvg>(entity =>
         {
             entity.ToView("vCurrencyRateAvg");
+        });
+
+        modelBuilder.Entity<vCurrencyRateHasta20241125>(entity =>
+        {
+            entity.ToView("vCurrencyRateHasta20241125");
         });
 
         modelBuilder.Entity<vDeliveryItemStatusReport>(entity =>
@@ -3836,6 +3862,14 @@ public partial class Entities : DbContext
             entity.ToView("vReportRemitoTotalFamiliaMes");
         });
 
+        modelBuilder.Entity<vReportRemitoTotalHasta20241125>(entity =>
+        {
+            entity.ToView("vReportRemitoTotalHasta20241125");
+
+            entity.Property(e => e.FechaPedido).IsFixedLength();
+            entity.Property(e => e.FechaRemito).IsFixedLength();
+        });
+
         modelBuilder.Entity<vReportRemitoTotalSinProducto>(entity =>
         {
             entity.ToView("vReportRemitoTotalSinProducto");
@@ -3857,6 +3891,11 @@ public partial class Entities : DbContext
         modelBuilder.Entity<vSaleDeliveryItem>(entity =>
         {
             entity.ToView("vSaleDeliveryItem");
+        });
+
+        modelBuilder.Entity<vSaleDeliveryItemUSDValue>(entity =>
+        {
+            entity.ToView("vSaleDeliveryItemUSDValue");
         });
 
         modelBuilder.Entity<vSaleDeliveryNote>(entity =>
@@ -3892,6 +3931,11 @@ public partial class Entities : DbContext
         modelBuilder.Entity<vSaleOrderDetailHasta20240411>(entity =>
         {
             entity.ToView("vSaleOrderDetailHasta20240411");
+        });
+
+        modelBuilder.Entity<vSaleOrderDetailHasta20241029>(entity =>
+        {
+            entity.ToView("vSaleOrderDetailHasta20241029");
         });
 
         modelBuilder.Entity<vSaleOrderItem_SaleDeliveryItem>(entity =>
@@ -4087,6 +4131,11 @@ public partial class Entities : DbContext
         modelBuilder.Entity<zDelete>(entity =>
         {
             entity.ToView("zDelete");
+        });
+
+        modelBuilder.Entity<zInventory>(entity =>
+        {
+            entity.Property(e => e.InventoryNumber).ValueGeneratedOnAdd();
         });
 
         modelBuilder.Entity<zRV>(entity =>

@@ -72,6 +72,12 @@ public partial class User
     [Unicode(false)]
     public string? SaleChannelID { get; set; }
 
+    public short? Use2FA { get; set; }
+
+    [StringLength(36)]
+    [Unicode(false)]
+    public string? Code2FA { get; set; }
+
     public DateTimeOffset? CreatedOn { get; set; }
 
     [StringLength(200)]

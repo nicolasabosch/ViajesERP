@@ -28,6 +28,8 @@ public partial class Warehouse
 
     public bool UsesLabelCode { get; set; }
 
+    public bool Active { get; set; }
+
     [StringLength(36)]
     [Unicode(false)]
     public string? WarehouseGroupID { get; set; }

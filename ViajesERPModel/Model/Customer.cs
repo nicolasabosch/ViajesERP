@@ -237,9 +237,6 @@ public partial class Customer
     [InverseProperty("Customer")]
     public virtual Channel Channel { get; set; } = null!;
 
-    [InverseProperty("Customer")]
-    public virtual ICollection<CreditNote> CreditNote { get; } = new List<CreditNote>();
-
     [ForeignKey("CurrencyID")]
     [InverseProperty("Customer")]
     public virtual Currency? Currency { get; set; }

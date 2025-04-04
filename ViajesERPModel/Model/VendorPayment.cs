@@ -123,6 +123,13 @@ public partial class VendorPayment
     [Unicode(false)]
     public string? PeriodID { get; set; }
 
+    /// <summary>
+    /// Código
+    /// </summary>
+    [StringLength(36)]
+    [Unicode(false)]
+    public string? CostCenterID { get; set; }
+
     public DateTimeOffset? CreatedOn { get; set; }
 
     [StringLength(200)]
@@ -142,6 +149,10 @@ public partial class VendorPayment
     [ForeignKey("ChannelID")]
     [InverseProperty("VendorPayment")]
     public virtual Channel Channel { get; set; } = null!;
+
+    [ForeignKey("CostCenterID")]
+    [InverseProperty("VendorPayment")]
+    public virtual CostCenter? CostCenter { get; set; }
 
     [ForeignKey("DocumentStatusID")]
     [InverseProperty("VendorPayment")]

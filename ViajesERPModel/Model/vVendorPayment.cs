@@ -51,4 +51,8 @@ public partial class vVendorPayment
 
     [Column(TypeName = "decimal(38, 2)")]
     public decimal? AmountInCurrency { get; set; }
+
+    [StringLength(4000)]
+    [Unicode(false)]
+    public string? Remarks { get; set; }
 }

@@ -12249,7 +12249,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mabosch\\.nuget\\packages\\": {}
+    "C:\\Users\\marce\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -12257,11 +12257,11 @@
       "projectUniqueName": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\ViajesERPAPI.csproj",
       "projectName": "ViajesERPAPI",
       "projectPath": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\ViajesERPAPI.csproj",
-      "packagesPath": "C:\\Users\\mabosch\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\marce\\.nuget\\packages\\",
       "outputPath": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mabosch\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\marce\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12270,7 +12270,8 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://nuget.pkg.github.com/iflowrep/index.json": {},
+        "https://www.nuget.org/api/v2/": {}
       },
       "frameworks": {
         "net6.0": {
@@ -12357,7 +12358,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.419\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.428\\RuntimeIdentifierGraph.json"
       }
     }
   }

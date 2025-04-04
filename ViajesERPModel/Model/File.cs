@@ -50,4 +50,7 @@ public partial class File
 
     [InverseProperty("File")]
     public virtual ICollection<TripEvent> TripEvent { get; } = new List<TripEvent>();
+
+    [InverseProperty("File")]
+    public virtual ICollection<TripFile> TripFile { get; } = new List<TripFile>();
 }

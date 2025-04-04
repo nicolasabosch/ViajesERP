@@ -279,6 +279,9 @@ public partial class SaleDelivery
     public virtual ICollection<TripEvent> TripEvent { get; } = new List<TripEvent>();
 
     [InverseProperty("SaleDelivery")]
+    public virtual ICollection<TripFile> TripFile { get; } = new List<TripFile>();
+
+    [InverseProperty("SaleDelivery")]
     public virtual ICollection<TripSaleDelivery> TripSaleDelivery { get; } = new List<TripSaleDelivery>();
 
     [ForeignKey("WarehousePositionID")]

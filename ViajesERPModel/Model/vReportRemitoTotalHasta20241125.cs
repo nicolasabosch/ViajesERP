@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace ViajesERPModel.Model;
 
 [Keyless]
-public partial class vReportRemitoTotal
+public partial class vReportRemitoTotalHasta20241125
 {
     [StringLength(200)]
     [Unicode(false)]
@@ -73,9 +73,6 @@ public partial class vReportRemitoTotal
 
     [Column(TypeName = "decimal(38, 6)")]
     public decimal? UnitarioUSDOF { get; set; }
-
-    [Column(TypeName = "decimal(38, 6)")]
-    public decimal? UnitarioUSDPromedio { get; set; }
 
     [StringLength(200)]
     public string? PaisOrigen { get; set; }

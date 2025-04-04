@@ -240,6 +240,10 @@ public partial class SaleOrder
     [Unicode(false)]
     public string? ProgrammerTeamID { get; set; }
 
+    [StringLength(36)]
+    [Unicode(false)]
+    public string? PurchaseDeliveryID { get; set; }
+
     [ForeignKey("CarrierID")]
     [InverseProperty("SaleOrder")]
     public virtual Carrier? Carrier { get; set; }

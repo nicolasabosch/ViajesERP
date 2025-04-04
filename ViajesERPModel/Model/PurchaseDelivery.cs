@@ -95,6 +95,9 @@ public partial class PurchaseDelivery
     [Unicode(false)]
     public string? CustomDeliveryCode { get; set; }
 
+    [Column(TypeName = "date")]
+    public DateTime? PreSalesEndDate { get; set; }
+
     public DateTimeOffset? CreatedOn { get; set; }
 
     [StringLength(200)]

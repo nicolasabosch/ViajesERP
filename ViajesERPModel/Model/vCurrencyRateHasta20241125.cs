@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace ViajesERPModel.Model;
 
 [Keyless]
-public partial class vCurrencyRate
+public partial class vCurrencyRateHasta20241125
 {
     [Column(TypeName = "date")]
     public DateTime CurrencyRateDate { get; set; }
@@ -20,7 +20,4 @@ public partial class vCurrencyRate
 
     [Column(TypeName = "decimal(23, 6)")]
     public decimal? ARSPerUSDOfAVG { get; set; }
-
-    [Column(TypeName = "decimal(38, 19)")]
-    public decimal? USDOfPerUSDOfAVG { get; set; }
 }

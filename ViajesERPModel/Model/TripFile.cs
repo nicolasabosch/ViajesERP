@@ -15,38 +15,38 @@ public partial class TripFile
 
     [StringLength(36)]
     [Unicode(false)]
-    public string FileID { get; set; } = null!;
+    public string? FileID { get; set; }
 
     [StringLength(36)]
     [Unicode(false)]
-    public string SaleDeliveryID { get; set; } = null!;
+    public string? SaleDeliveryID { get; set; }
 
     [StringLength(36)]
     [Unicode(false)]
-    public string SourceID { get; set; } = null!;
+    public string? SourceID { get; set; }
 
     [Unicode(false)]
-    public string Remarks { get; set; } = null!;
+    public string? Remarks { get; set; }
 
-    public DateTimeOffset CreatedOn { get; set; }
+    public DateTimeOffset? CreatedOn { get; set; }
 
     [StringLength(200)]
     [Unicode(false)]
-    public string CreatedBy { get; set; } = null!;
+    public string? CreatedBy { get; set; }
 
-    public DateTimeOffset LastModifiedOn { get; set; }
+    public DateTimeOffset? LastModifiedOn { get; set; }
 
     [StringLength(200)]
     [Unicode(false)]
-    public string LastModifiedBy { get; set; } = null!;
+    public string? LastModifiedBy { get; set; }
 
     [ForeignKey("FileID")]
     [InverseProperty("TripFile")]
-    public virtual File File { get; set; } = null!;
+    public virtual File? File { get; set; }
 
     [ForeignKey("SaleDeliveryID")]
     [InverseProperty("TripFile")]
-    public virtual SaleDelivery SaleDelivery { get; set; } = null!;
+    public virtual SaleDelivery? SaleDelivery { get; set; }
 
     [ForeignKey("TripID")]
     [InverseProperty("TripFile")]

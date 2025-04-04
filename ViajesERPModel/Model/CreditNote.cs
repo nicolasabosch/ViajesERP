@@ -238,10 +238,6 @@ public partial class CreditNote
     [InverseProperty("CreditNote")]
     public virtual Currency Currency { get; set; } = null!;
 
-    [ForeignKey("CustomerID")]
-    [InverseProperty("CreditNote")]
-    public virtual Customer Customer { get; set; } = null!;
-
     [ForeignKey("DocumentStatusID")]
     [InverseProperty("CreditNote")]
     public virtual DocumentStatus DocumentStatus { get; set; } = null!;

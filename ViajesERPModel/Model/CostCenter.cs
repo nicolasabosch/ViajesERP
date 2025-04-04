@@ -6,22 +6,22 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ViajesERPModel.Model;
 
-public partial class Schedule
+public partial class CostCenter
 {
+    /// <summary>
+    /// Código
+    /// </summary>
     [Key]
     [StringLength(36)]
     [Unicode(false)]
-    public string ScheduleID { get; set; } = null!;
+    public string CostCenterID { get; set; } = null!;
 
-    [StringLength(36)]
+    /// <summary>
+    /// Nombre
+    /// </summary>
+    [StringLength(100)]
     [Unicode(false)]
-    public string? ScheduleCode { get; set; }
-
-    [StringLength(500)]
-    [Unicode(false)]
-    public string ScheduleName { get; set; } = null!;
-
-    public bool Active { get; set; }
+    public string CostCenterName { get; set; } = null!;
 
     public DateTimeOffset? CreatedOn { get; set; }
 
@@ -35,6 +35,6 @@ public partial class Schedule
     [Unicode(false)]
     public string? LastModifiedBy { get; set; }
 
-    [InverseProperty("Schedule")]
-    public virtual ICollection<TaskType> TaskType { get; } = new List<TaskType>();
+    [InverseProperty("CostCenter")]
+    public virtual ICollection<VendorPayment> VendorPayment { get; } = new List<VendorPayment>();
 }
