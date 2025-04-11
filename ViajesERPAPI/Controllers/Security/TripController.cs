@@ -294,7 +294,16 @@ namespace DemoCabernetNet6.Controllers
                     {
                         TripSaleDelivery.SaleDeliveryOnTripStatusID = SaleDeliveryOnTripStatusID;
                         TripSaleDelivery.SaleDeliveryOnTripRemarks = SaleDeliveryOnTripRemarks;
-                        TripSaleDelivery.SaleDeliveryRejectReasonID = SaleDeliveryRejectReasonID;
+                        
+                        if(SaleDeliveryOnTripStatusID == "Rejected")
+                        {
+                            TripSaleDelivery.SaleDeliveryRejectReasonID = SaleDeliveryRejectReasonID;
+                        }
+                        else
+                        {
+                            TripSaleDelivery.SaleDeliveryRejectReasonID = null;
+                        }
+                        //TripSaleDelivery.SaleDeliveryRejectReasonID = SaleDeliveryRejectReasonID;
                         db.SaveChanges();
                     }
                     break;
@@ -306,7 +315,14 @@ namespace DemoCabernetNet6.Controllers
                     {
                         TripWithdrawalOrder.SaleDeliveryOnTripStatusID = SaleDeliveryOnTripStatusID;
                         TripWithdrawalOrder.SaleDeliveryOnTripRemarks = SaleDeliveryOnTripRemarks;
-                        TripWithdrawalOrder.SaleDeliveryRejectReasonID = SaleDeliveryRejectReasonID;
+                        if (SaleDeliveryOnTripStatusID == "Rejected")
+                        {
+                            TripWithdrawalOrder.SaleDeliveryRejectReasonID = SaleDeliveryRejectReasonID;
+                        }
+                        else
+                        {
+                            TripWithdrawalOrder.SaleDeliveryRejectReasonID = null;
+                        }
                         db.SaveChanges();
                     }
                     break;
@@ -318,7 +334,14 @@ namespace DemoCabernetNet6.Controllers
                     {
                         TripSaleRetail.SaleDeliveryOnTripStatusID = SaleDeliveryOnTripStatusID;
                         TripSaleRetail.SaleDeliveryOnTripRemarks = SaleDeliveryOnTripRemarks;
-                        TripSaleRetail.SaleDeliveryRejectReasonID = SaleDeliveryRejectReasonID;
+                        if (SaleDeliveryOnTripStatusID == "Rejected")
+                        {
+                            TripSaleRetail.SaleDeliveryRejectReasonID = SaleDeliveryRejectReasonID;
+                        }
+                        else
+                        {
+                            TripSaleRetail.SaleDeliveryRejectReasonID = null;
+                        }
                         db.SaveChanges();
                     }
                     break;
