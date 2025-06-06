@@ -26,7 +26,7 @@ namespace DemoCabernetNet6.Controllers
 
         [AllowAnonymous]
         [HttpGet("{id}")]
-        public ActionResult GetTrip(int id)
+        public ActionResult GetTrip(string id)
         {
             var previewList = new[] { ".jpeg", ".jpg", ".png", ".gif", ".bmp" };
 
@@ -39,7 +39,7 @@ namespace DemoCabernetNet6.Controllers
                         from VehicleType in db.VehicleType.Where(X => X.VehicleTypeID == Trip.VehicleTypeID).DefaultIfEmpty()
                         from Freight in db.Freight.Where(X => X.FreightID == Trip.FreightID).DefaultIfEmpty()
 
-                        where Trip.TripID == id
+                        where Trip.TripCode == id
                         select new
                         {
                             Trip.TripID,
@@ -60,6 +60,7 @@ namespace DemoCabernetNet6.Controllers
                             DestinationWarehouseGroupName = Destination.WarehouseGroupName,
                             Trip.VehicleTypeID,
                             VehicleType.VehicleTypeName,
+                            Trip.TripCode
 
 
 
@@ -75,13 +76,14 @@ namespace DemoCabernetNet6.Controllers
 
             }
 
+            var tripID = trip.TripID;
             dynamic record = trip.ToExpando();
 
 
             record.TripEvent = (from TripEvent in db.TripEvent
                                 from File in db.File.Where(x => x.FileID == TripEvent.FileID).DefaultIfEmpty()
                                 join Event in db.Event on TripEvent.EventID equals Event.EventID
-                                where TripEvent.TripID == id
+                                where TripEvent.TripID == tripID
                                 select new
                                 {
                                     TripEvent.TripEventID,
@@ -94,6 +96,7 @@ namespace DemoCabernetNet6.Controllers
                                     TripEvent.SaleDeliveryID,
                                     TripEvent.EventID,
                                     Event.EventName,
+                                    File.FileName,
                                     Preview = File == null ? false : previewList.Contains(File.FileName.ToLower().Substring(File.FileName.ToLower().IndexOf("."))),
 
                                 }
@@ -102,7 +105,7 @@ namespace DemoCabernetNet6.Controllers
                                 ).ToList();
             record.TripSaleDelivery = (from TripSaleDelivery in db.TripSaleDelivery
                                        join vSaleDelivery in db.vSaleDelivery on TripSaleDelivery.SaleDeliveryID equals vSaleDelivery.SaleDeliveryID
-                                       where TripSaleDelivery.TripID == id
+                                       where TripSaleDelivery.TripID == tripID
                                        orderby TripSaleDelivery.DisplayOrder
                                        select new
                                        {
@@ -158,7 +161,7 @@ namespace DemoCabernetNet6.Controllers
 
             record.TripWithdrawalOrder = (from TripWithdrawalOrder in db.TripWithdrawalOrder
                                           join vSaleDelivery in db.vSaleDelivery on TripWithdrawalOrder.WithdrawalOrderID equals vSaleDelivery.SaleDeliveryID
-                                          where TripWithdrawalOrder.TripID == id
+                                          where TripWithdrawalOrder.TripID == tripID
                                           orderby TripWithdrawalOrder.DisplayOrder
                                           select new
                                           {
@@ -214,7 +217,7 @@ namespace DemoCabernetNet6.Controllers
                                           }).ToList();
             record.TripSaleRetail = (from TripSaleRetail in db.TripSaleRetail
                                      join vSaleDelivery in db.vSaleDelivery on TripSaleRetail.SaleRetailID equals vSaleDelivery.SaleDeliveryID
-                                     where TripSaleRetail.TripID == id
+                                     where TripSaleRetail.TripID == tripID
                                      orderby TripSaleRetail.DisplayOrder
                                      select new
                                      {

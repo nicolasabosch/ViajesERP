@@ -82,6 +82,10 @@ public partial class Trip
     [StringLength(200)]
     [Unicode(false)]
     public string? LastModifiedBy { get; set; }
+    
+    [StringLength(36)]
+    [Unicode(false)]
+    public string TripCode { get; set; } = null!;
 
     [ForeignKey("DeliveryZoneID")]
     [InverseProperty("Trip")]
