@@ -217,6 +217,7 @@ namespace DemoCabernetNet6.Controllers
                                           }).ToList();
             record.TripSaleRetail = (from TripSaleRetail in db.TripSaleRetail
                                      join vSaleDelivery in db.vSaleDelivery on TripSaleRetail.SaleRetailID equals vSaleDelivery.SaleDeliveryID
+                                     
                                      where TripSaleRetail.TripID == tripID
                                      orderby TripSaleRetail.DisplayOrder
                                      select new
