@@ -30,9 +30,9 @@
               "Title": "TripController.cs",
               "DocumentMoniker": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\Controllers\\Security\\TripController.cs",
               "RelativeDocumentMoniker": "Controllers\\Security\\TripController.cs",
-              "ToolTip": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\Controllers\\Security\\TripController.cs*",
-              "RelativeToolTip": "Controllers\\Security\\TripController.cs*",
-              "ViewState": "AQIAABYBAAAAAAAAAAAmwCYBAAA8AAAA",
+              "ToolTip": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\Controllers\\Security\\TripController.cs",
+              "RelativeToolTip": "Controllers\\Security\\TripController.cs",
+              "ViewState": "AQIAABYBAAAAAAAAAAAmwB8BAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-25T19:44:52.11Z",
               "EditorCaption": ""
@@ -47,8 +47,7 @@
               "RelativeToolTip": "Controllers\\Security\\TripEventController.cs",
               "ViewState": "AQIAACcAAAAAAAAAAAAAADgAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T19:43:40.722Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T19:43:40.722Z"
             }
           ]
         }
