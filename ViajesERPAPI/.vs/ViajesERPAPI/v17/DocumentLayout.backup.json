@@ -3,12 +3,22 @@
   "WorkspaceRootPath": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A78676F5-DBA3-44DC-8D62-C918A7000D51}|ViajesERPAPI.csproj|c:\\proyectos\\viajeserp\\viajeserpapi\\controllers\\security\\saledeliverycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A78676F5-DBA3-44DC-8D62-C918A7000D51}|ViajesERPAPI.csproj|solutionrelative:controllers\\security\\saledeliverycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A78676F5-DBA3-44DC-8D62-C918A7000D51}|ViajesERPAPI.csproj|c:\\proyectos\\viajeserp\\viajeserpapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A78676F5-DBA3-44DC-8D62-C918A7000D51}|ViajesERPAPI.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A78676F5-DBA3-44DC-8D62-C918A7000D51}|ViajesERPAPI.csproj|c:\\proyectos\\viajeserp\\viajeserpapi\\controllers\\security\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A78676F5-DBA3-44DC-8D62-C918A7000D51}|ViajesERPAPI.csproj|solutionrelative:controllers\\security\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A78676F5-DBA3-44DC-8D62-C918A7000D51}|ViajesERPAPI.csproj|c:\\proyectos\\viajeserp\\viajeserpapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A78676F5-DBA3-44DC-8D62-C918A7000D51}|ViajesERPAPI.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A78676F5-DBA3-44DC-8D62-C918A7000D51}|ViajesERPAPI.csproj|c:\\proyectos\\viajeserp\\viajeserpapi\\controllers\\security\\filecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A78676F5-DBA3-44DC-8D62-C918A7000D51}|ViajesERPAPI.csproj|solutionrelative:controllers\\security\\filecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ECC5D6AD-2D0D-4989-BE0A-258886211E0D}|..\\ViajesERPModel\\ViajesERPModel.csproj|c:\\proyectos\\viajeserp\\viajeserpmodel\\viajeserpmodel.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\9.0.302\\Sdks\\Microsoft.NET.Sdk.Razor\\Sdk\\Sdk.props||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A78676F5-DBA3-44DC-8D62-C918A7000D51}|ViajesERPAPI.csproj|c:\\proyectos\\viajeserp\\viajeserpapi\\controllers\\security\\tripcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +27,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A78676F5-DBA3-44DC-8D62-C918A7000D51}|ViajesERPAPI.csproj|c:\\proyectos\\viajeserp\\viajeserpapi\\controllers\\security\\tripeventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A78676F5-DBA3-44DC-8D62-C918A7000D51}|ViajesERPAPI.csproj|solutionrelative:controllers\\security\\tripeventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A78676F5-DBA3-44DC-8D62-C918A7000D51}|ViajesERPAPI.csproj|c:\\proyectos\\viajeserp\\viajeserpapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A78676F5-DBA3-44DC-8D62-C918A7000D51}|ViajesERPAPI.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,107 +36,92 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SaleDeliveryController.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\Controllers\\Security\\SaleDeliveryController.cs",
-              "RelativeDocumentMoniker": "Controllers\\Security\\SaleDeliveryController.cs",
-              "ToolTip": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\Controllers\\Security\\SaleDeliveryController.cs",
-              "RelativeToolTip": "Controllers\\Security\\SaleDeliveryController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAB8AAAAsAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "FileController.cs",
+              "DocumentMoniker": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\Controllers\\Security\\FileController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Security\\FileController.cs",
+              "ToolTip": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\Controllers\\Security\\FileController.cs",
+              "RelativeToolTip": "Controllers\\Security\\FileController.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAnwEoAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-24T15:17:28.422Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:133:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+              "WhenOpened": "2025-07-15T18:26:43.889Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "TripEventController.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\Controllers\\Security\\TripEventController.cs",
-              "RelativeDocumentMoniker": "Controllers\\Security\\TripEventController.cs",
-              "ToolTip": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\Controllers\\Security\\TripEventController.cs",
-              "RelativeToolTip": "Controllers\\Security\\TripEventController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-24T15:17:22.435Z",
-              "EditorCaption": ""
+              "Title": "ViajesERPModel.csproj",
+              "DocumentMoniker": "C:\\Proyectos\\ViajesERP\\ViajesERPModel\\ViajesERPModel.csproj",
+              "RelativeDocumentMoniker": "..\\ViajesERPModel\\ViajesERPModel.csproj",
+              "ToolTip": "C:\\Proyectos\\ViajesERP\\ViajesERPModel\\ViajesERPModel.csproj",
+              "RelativeToolTip": "..\\ViajesERPModel\\ViajesERPModel.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-14T18:23:55.499Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "Sdk.props",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.302\\Sdks\\Microsoft.NET.Sdk.Razor\\Sdk\\Sdk.props",
+              "RelativeDocumentMoniker": "..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.302\\Sdks\\Microsoft.NET.Sdk.Razor\\Sdk\\Sdk.props",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\9.0.302\\Sdks\\Microsoft.NET.Sdk.Razor\\Sdk\\Sdk.props",
+              "RelativeToolTip": "..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.302\\Sdks\\Microsoft.NET.Sdk.Razor\\Sdk\\Sdk.props",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAowBMAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-07-14T18:23:51.249Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAIwA8AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-14T18:16:49.886Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAIwAgAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-24T13:16:40.518Z"
+              "WhenOpened": "2025-07-14T18:16:40.526Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "TripController.cs",
               "DocumentMoniker": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\Controllers\\Security\\TripController.cs",
               "RelativeDocumentMoniker": "Controllers\\Security\\TripController.cs",
               "ToolTip": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\Controllers\\Security\\TripController.cs",
               "RelativeToolTip": "Controllers\\Security\\TripController.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAawP8AAABLAAAAAAAAAA==",
+              "ViewState": "AgIAABYBAAAAAAAAAAAmwB8BAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T21:04:15.61Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T19:44:52.11Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EventController.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\Controllers\\Security\\EventController.cs",
-              "RelativeDocumentMoniker": "Controllers\\Security\\EventController.cs",
-              "ToolTip": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\Controllers\\Security\\EventController.cs",
-              "RelativeToolTip": "Controllers\\Security\\EventController.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACgAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "TripEventController.cs",
+              "DocumentMoniker": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\Controllers\\Security\\TripEventController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Security\\TripEventController.cs",
+              "ToolTip": "C:\\Proyectos\\ViajesERP\\ViajesERPAPI\\Controllers\\Security\\TripEventController.cs",
+              "RelativeToolTip": "Controllers\\Security\\TripEventController.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAADgAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T21:03:06.226Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T19:43:40.722Z"
             }
           ]
         }

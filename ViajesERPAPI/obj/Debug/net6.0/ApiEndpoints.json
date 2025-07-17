@@ -83,6 +83,22 @@
   },
   {
     "ContainingType": "DemoCabernetNet6.Controllers.LanguageController",
+    "Method": "UpdateTrip",
+    "RelativePath": "api/Trip",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "input",
+        "Type": "System.Object",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DemoCabernetNet6.Controllers.LanguageController",
     "Method": "GetTrip",
     "RelativePath": "api/Trip/{id}",
     "HttpMethod": "GET",
@@ -91,7 +107,7 @@
     "Parameters": [
       {
         "Name": "id",
-        "Type": "System.Int32",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
@@ -99,7 +115,7 @@
   },
   {
     "ContainingType": "DemoCabernetNet6.Controllers.TripEventController",
-    "Method": "PostCustomer",
+    "Method": "PostTripEvent",
     "RelativePath": "api/TripEvent",
     "HttpMethod": "POST",
     "IsController": true,
