@@ -74,6 +74,8 @@ namespace DemoCabernetNet6.ontrollers
                 string? fileID = Request.Form["fileID"];
                 var x = Request.Form;
                 var file = new ViajesERPModel.Model.File();
+                file.CreatedOn = DateTime.Now;
+                file.LastModifiedOn = DateTime.Now;
                 file.FileID = fileID ?? System.Guid.NewGuid().ToString();
                 file.FolderName = System.DateTime.Today.ToString("yyyyMMdd");
                 System.IO.Directory.CreateDirectory(Directory.GetCurrentDirectory() + "\\files\\" + file.FolderName);
