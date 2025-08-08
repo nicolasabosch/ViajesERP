@@ -355,7 +355,12 @@ namespace DemoCabernetNet6.Controllers
             }
 
 
-            return NoContent();
+            //return NoContent();
+            return Ok(new {
+                SaleDeliveryOnTripStatusID = SaleDeliveryOnTripStatusID,
+                SaleDeliveryOnTripRemarks = SaleDeliveryOnTripRemarks,
+                SaleDeliveryRejectReasonID = SaleDeliveryRejectReasonID
+            });
         }
 
     }
